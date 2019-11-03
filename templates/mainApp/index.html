@@ -1,0 +1,76 @@
+{% extends 'mainApp/base.html' %}
+{% block homeactive %}active{% endblock homeactive %}
+{% block body %}
+
+<!-- First section contains an image, followed by two paragraphs and 3 buttons -->
+<section class="jumbotron text-center">
+    <div class="container">
+        <img src=" /static/img/logo.png" alt="logo" width="120">
+        <h1 class="jumbotron-heading"><span id="typed"></span></h1>
+        <p class="lead text-muted">Confused on which ML Algorithm to use for you data? We have got you covered. With
+            this free tool you can get to find out the best ML algorithm that works on your data. Try now!<br> </p>
+        <p>
+            <a href="/solver" class="btn btn-danger my-2">Try Fidictor</a>
+            <a href="/solver" class="btn btn-success my-2">Data Profiling</a>
+            <a href="/contact" class="btn btn-primary my-2">Contact Us</a>
+        </p>
+    </div>
+</section>
+
+<!-- Container contains a row with three items -->
+<div class="container">
+    <div class="row">
+        <div class="card mx-auto my-2 p-2" style="width: 18rem;">
+            <img width="23px" height="245px" src="/static/img/logo.png" class="card-img-top" alt="..." style="padding: 6px 17px;">
+            <div class="card-body">
+                <h5 class="card-title">Try Fidictor</h5>
+                <p class="card-text">Get to find out the best ML algorithm for your data</p>
+                <a href="/videos" class="btn btn-primary">Try Fidictor</a>
+            </div>
+        </div>
+
+        <div class="card mx-auto my-2 p-2" style="width: 18rem;">
+            <img width="23px" height="245px" src="/static/img/uploaderGear.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Generate Report</h5>
+                <p class="card-text">Get to find out the best ML algorithm for your data</p>
+                <a href="/blog" class="btn btn-primary">Generate Report</a>
+            </div>
+        </div>
+
+        <div class="card mx-auto my-2 p-2" style="width: 18rem;">
+            <img width="23px" height="245px" src="/static/img/uploader.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Contact Us</h5>
+                <p class="card-text"> Get to find out the best ML algorithm for your data</p>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="container mt-3 text-center">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2019 Fidictor by Team Gravity &middot; <a href="#">Privacy</a> &middot;<a href="#">Terms</a></p>
+</footer>
+{% endblock body %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+<script>
+    // Configuration for typed js
+    window.onload = function () {
+        console.log("loaded")
+        var typed = new Typed('#typed', {
+            strings: ["Welcome to Fidictor", "Search for the best ML Algorithm", "Generate a report for your data", "Try out different ML attributes", "and much more..."],
+            backSpeed: 15,
+            smartBackspace: true,
+            backDelay: 1200,
+            startDelay: 1000,
+            typeSpeed: 25,
+            loop: true,
+        });
+    };
+</script>
+{% endblock js %}

@@ -1,0 +1,78 @@
+{% extends 'mainApp/base.html' %}
+{% load static %}
+
+{% block mlsolveractive %}active{% endblock mlsolveractive %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/solver.css' %}">
+{% endblock css %}
+
+{% block body %}
+<!-- The parent container containing everything on the solver page -->
+<div class="container">
+    <!-- Master upload container containing uploadContainer and logoContainer -->
+    <div class="upload">
+        <!-- Upload container contains uploadBlock and UploadInfo -->
+        <div class="uploadContainer">
+            <span class="helper"></span>
+            <!-- UploadBlock contains an image, uploadInstr and uploadInfo (which has a progress bar) -->
+            <div class="uploadBlock">
+                <img src="/static/img/uploader.svg" class="uploadImage">
+                <!-- uploadInstr contains some instructions for file upload -->
+                <div id="uploadInstr">
+                    <p>
+                        Drop your file here to upload your file to the server
+                    </p>
+                    <p>
+                        Your file will be processed once uploaded.
+                    </p>
+                </div>
+                <!-- uploadInfo contains progress bar for file upload -->
+                <div id="uploadInfo">
+                    <h3>Uploading your file...</h3>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" id="progressBar"
+                            style="width: 0%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- logoContainer contains just a static fidictor logo -->
+        <div class="logoContainer">
+            <img src="/static/img/logo.png" class="logoImage">
+        </div>
+    </div>
+    <hr>
+
+    <!-- fewQuestionsContainer box is hidden and gets visible after the file upload -->
+    <div class="fewQuestionsContainer">
+        <h2 class="mx-3">Answer few questions about your data:</h2>
+        <div id="questions"></div>
+        <button class="btn btn-primary my-3" id="submit"> Submit </button>
+    </div>
+
+    <!-- progressContainer contains the overall progress -->
+    <div class="progressContainer">
+        <h2 class="mx-3">Progress:</h2>
+        <div class="progress my-3 mx-4">
+
+            <!-- progressBarOverall is the progress bar for overall progress -->
+            <div class="progress-bar progress-bar-striped" role="progressbar" id="progressBarOverall" style="width: 0%"
+                aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <!-- progressList gets appended with list items after server sends progress -->
+        <ul class="list-group" id="progressList"></ul>
+
+    </div>
+</div>
+{% endblock body %}
+
+<!-- Add the external javaScript -->
+{% block js %}
+<script>
+let csrf_token = "{{ csrf_token }}";
+</script>
+<script src="{% static 'js/solver.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,76 @@
+body{
+    background-color: #e2e2f3;
+}
+
+.list-group-item{
+    background-color: #e2e2f3;
+}
+
+#progressList{
+    padding: 20px;
+}
+
+.upload {
+    margin-top: 20px; 
+    border: 3px solid black;
+    border-radius: 3px; 
+}
+
+.logoContainer {
+    text-align: center;
+    float: right;
+    border: 3px solid rgb(16, 22, 16);
+    width: 30%; 
+}
+
+.uploadContainer {
+    text-align: center;
+    display: inline-block;
+    width: 70%; 
+    border: 3px solid rgb(20, 17, 17);
+}
+
+.uploadImage {
+    width: 120px;
+    margin-bottom: 26px;
+}
+
+.logoImage {
+    width: 81%;
+    padding: 36px 15px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.highlight {
+    border: 5px dashed purple;
+    margin: -3px 0px;
+    background: rgb(245, 224, 245);
+}
+
+.uploadBlock {
+    padding: 63px;
+    display: inline-block;
+    vertical-align: middle; 
+    height: 303px;
+}
+
+.progressContainer {
+    display: none;
+    border: 2px solid black;
+    border-radius: 18px;
+    padding: 7px;
+    margin: 0px 0px 70px 0px;
+    height: 20%;
+}
+
+.fewQuestions {
+    border: 2px solid black;
+    border-radius: 18px;
+    padding: 18px 20px;
+    height: 20%;
+}
